@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway" >
     <!-- Our CSS -->
     <link rel="stylesheet" href="static/coffee.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -48,19 +52,35 @@
 
     // Set these variables to their DOM elements
 
-    const coffeeImage = document.querySelector('img');
-    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    // const coffeeImage = document.querySelector('img');
+    const $coffeeImage = $('#coffee-image')
+
+    // coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    $coffeeImage.attr('src', 'static/coffee_beans.jpg')
+
+    // const coffeeBeans = () => {
+    //     coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    // }
 
     const coffeeBeans = () => {
-        coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+        $coffeeImage.attr('src', 'static/coffee_beans.jpg');
     }
+
+    // const coffeeMug = () => {
+    //     coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+    // }
 
     const coffeeMug = () => {
-        coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+        $coffeeImage.attr('src', 'static/coffee_mug.jpg');
     }
 
+
+    // const coffeeMachine = () => {
+    //     coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+    // }
+
     const coffeeMachine = () => {
-        coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+        $coffeeImage.attr('src', 'static/coffee_machine.jpg');
     }
 
     const makeCoffee = () => {
@@ -68,8 +88,8 @@
         setTimeout(coffeeBeans, 2500);
     }
 
-    coffeeImage.addEventListener('click',coffeeMachine);
-    coffeeImage.addEventListener('click', makeCoffee);
+    $coffeeImage.on('click',coffeeMachine);
+    $coffeeImage.on('click', makeCoffee);
     
 
 
